@@ -24,6 +24,12 @@ public class PlayerController : MonoBehaviour
         if (kb.aKey.isPressed || kb.leftArrowKey.isPressed) moveInput -= 1f;
         if (kb.dKey.isPressed || kb.rightArrowKey.isPressed) moveInput += 1f;
 
+        if (moveInput != 0f) {
+            Vector3 s = transform.localScale;
+            s.x = Mathf.Abs(s.x) * moveInput;
+            transform.localScale = s;
+        }
+        
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
 
         if (kb.spaceKey.wasPressedThisFrame && isGrounded)
