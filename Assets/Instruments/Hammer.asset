@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d370b6a9b3fb74817b9bd990a2c66ceb, type: 3}
   m_Name: Hammer
   m_EditorClassIdentifier: Assembly-CSharp::Instrument
-  instrumentName: 
-  instrumentSprite: {fileID: 0}
+  instrumentName: Hammer
+  instrumentSprite: {fileID: 3504452937306456859, guid: c50035f2cac6f45b7b60f9fcc45f40cf, type: 3}

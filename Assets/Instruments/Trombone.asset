@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d370b6a9b3fb74817b9bd990a2c66ceb, type: 3}
   m_Name: Trombone
   m_EditorClassIdentifier: Assembly-CSharp::Instrument
-  instrumentName: 
-  instrumentSprite: {fileID: 0}
+  instrumentName: Trombone
+  instrumentSprite: {fileID: 7569287533760204790, guid: b5cc5b691a18e45b2ad762442fe06182, type: 3}
