@@ -30,10 +30,13 @@ public class SelectionManager : MonoBehaviour
             tools[toolIndex].Tick(selected);
     }
 
+    public event System.Action<EditableShape> SelectionChanged;
+
     void SetSelected(EditableShape s)
     {
         if (selected != null) selected.Deselect();
         selected = s;
         if (selected != null) selected.Select();
+        SelectionChanged?.Invoke(selected);
     }
 }

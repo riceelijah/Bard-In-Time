@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public float checkRadius = 0.2f;
     public LayerMask groundLayer;
+    public GameObject instrument;
 
     Rigidbody2D rb;
     float moveInput;
