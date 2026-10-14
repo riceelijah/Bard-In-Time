@@ -15,5 +15,6 @@ MonoBehaviour:
   instrumentName: Hammer
   instrumentSprite: {fileID: 3504452937306456859, guid: c50035f2cac6f45b7b60f9fcc45f40cf, type: 3}
   ability: 3
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0.25, y: 0.2, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  rotation: -5

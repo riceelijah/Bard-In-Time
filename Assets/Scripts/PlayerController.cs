@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
             s.x = Mathf.Abs(s.x) * moveInput;
             transform.localScale = s;
         }
-        
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
 
         if (kb.spaceKey.wasPressedThisFrame && isGrounded)
@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // change this to a force or accel to stop the stutter
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
     }
 }

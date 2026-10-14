@@ -113,4 +113,9 @@ InitTestScene*.unity*
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
 
+# Project Settings
 ProjectSettings/Packages/com.unity.learn.iet-framework/Settings.json
+# Claude Code
+.claude/
+CLAUDE.md
+CLAUDE.local.md

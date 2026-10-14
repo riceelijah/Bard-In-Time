@@ -9,5 +9,6 @@ public class Instrument : ScriptableObject
     public Sprite instrumentSprite;
     public Abilities ability;
     public Vector3 offset;
-    public Vector3 scale;
+    public Vector3 scale = Vector3.one;
+    public float rotation;
 }
