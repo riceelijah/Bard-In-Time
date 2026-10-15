@@ -5,13 +5,14 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 7f;
     public float jumpForce = 12f;
+    public float launchMultiplier = 0.5f; // how much of a rising block's speed we inherit
     public Transform groundCheck;
     public float checkRadius = 0.2f;
     public LayerMask groundLayer;
 
     Rigidbody2D rb;
     float moveInput;
-    bool isGrounded;
+    Collider2D ground;
 
     void Awake() => rb = GetComponent<Rigidbody2D>();
 
@@ -30,15 +31,27 @@ public class PlayerController : MonoBehaviour
             transform.localScale = s;
         }
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+        ground = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
 
-        if (kb.spaceKey.wasPressedThisFrame && isGrounded)
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        if (kb.spaceKey.wasPressedThisFrame && ground)
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, SurfaceSpeed() + jumpForce);
     }
 
     void FixedUpdate()
     {
+        // ride a rising surface; when it stops, we keep that speed and fly off (inertia)
+        float vy = rb.linearVelocity.y;
+        float surface = SurfaceSpeed();
+        if (surface > 0f) vy = Mathf.Max(vy, surface); // only a rising floor pushes; 0 must not stop falling
         // change this to a force or accel to stop the stutter
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, vy);
+    }
+
+    // Only counts when our feet are over the block, not beside it.
+    float SurfaceSpeed() {
+        if (!ground || !ground.TryGetComponent(out RectShape r)) return 0f;
+        float x = groundCheck.position.x;
+        if (x < ground.bounds.min.x || x > ground.bounds.max.x) return 0f;
+        return r.SurfaceSpeed * launchMultiplier;
     }
 }
