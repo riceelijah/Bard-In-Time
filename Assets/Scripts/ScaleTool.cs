@@ -5,6 +5,8 @@ public class ScaleTool : ShapeTool
 {
     public float step = 0.1f;
 
+    public override Abilities Ability => Abilities.Scale;
+
     public override void Tick(EditableShape shape)
     {
         Vector2 s = Mouse.current.scroll.ReadValue();

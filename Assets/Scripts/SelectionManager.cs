@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class SelectionManager : MonoBehaviour
 {
     [SerializeField] LayerMask editableLayer;
+    [SerializeField] InstrumentHolder instrumentHolder;
 
     Camera cam;
     EditableShape selected;
@@ -14,6 +15,16 @@ public class SelectionManager : MonoBehaviour
     {
         cam = Camera.main;
         tools = GetComponents<ShapeTool>();
+        instrumentHolder.InstrumentChanged += OnInstrumentChanged;
+    }
+
+    void OnDestroy()
+    {
+        instrumentHolder.InstrumentChanged -= OnInstrumentChanged;
+    }
+
+    void OnInstrumentChanged(Instrument instrument) {
+        Debug.Log(instrument.ability);
     }
 
     void Update()

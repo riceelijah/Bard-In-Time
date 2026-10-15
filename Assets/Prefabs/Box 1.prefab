@@ -118,7 +118,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -183,3 +183,4 @@ MonoBehaviour:
   selectedTint: {r: 1, g: 0.9458132, b: 0.3443396, a: 1}
   minSize: {x: 1.5, y: 1.5}
   maxSize: {x: 25, y: 25}
+  growDuration: 0.15

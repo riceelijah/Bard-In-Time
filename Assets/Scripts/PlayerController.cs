@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     // Only counts when our feet are over the block, not beside it.
     float SurfaceSpeed() {
-        if (!ground || !ground.TryGetComponent(out RectShape r)) return 0f;
+        if (!ground || !ground.TryGetComponent(out EditableShape r)) return 0f;
         float x = groundCheck.position.x;
         if (x < ground.bounds.min.x || x > ground.bounds.max.x) return 0f;
         return r.SurfaceSpeed * launchMultiplier;
