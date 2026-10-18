@@ -106,12 +106,12 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  m_UseAutoMass: 1
   m_Mass: 3
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a99626c0319634352af046a01e5f8d98, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 5012641464103777937}
   m_Enabled: 1
   serializedVersion: 3
-  m_Density: 1
+  m_Density: 30
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -184,3 +184,4 @@ MonoBehaviour:
   minSize: {x: 1.5, y: 1.5}
   maxSize: {x: 25, y: 25}
   growDuration: 0.15
+  levitateStiffness: 8

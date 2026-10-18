@@ -9,7 +9,7 @@ public class SelectionManager : MonoBehaviour
     Camera cam;
     EditableShape selected;
     ShapeTool[] tools;
-    int toolIndex;
+    ShapeTool tool; // the one matching the equipped instrument, or null
 
     void Awake()
     {
@@ -24,12 +24,14 @@ public class SelectionManager : MonoBehaviour
     }
 
     void OnInstrumentChanged(Instrument instrument) {
-        Debug.Log(instrument.ability);
+        tool = System.Array.Find(tools, t => t.Ability == instrument.ability);
     }
 
     void Update()
     {
         var mouse = Mouse.current;
+        if (mouse == null) return;
+
         if (mouse.leftButton.wasPressedThisFrame)
         {
             Vector2 p = cam.ScreenToWorldPoint(mouse.position.ReadValue());
@@ -37,13 +39,14 @@ public class SelectionManager : MonoBehaviour
             SetSelected(hit ? hit.GetComponentInParent<EditableShape>() : null);
         }
 
-        if (selected != null && tools.Length > 0)
-            tools[toolIndex].Tick(selected);
+        if (selected != null && tool != null)
+            tool.Tick(selected);
     }
 
     public event System.Action<EditableShape> SelectionChanged;
 
-    void SetSelected(EditableShape s)
+    // public so tools that destroy/replace the shape can clear or move the selection first
+    public void SetSelected(EditableShape s)
     {
         if (selected != null) selected.Deselect();
         selected = s;

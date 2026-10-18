@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     float moveInput;
     Collider2D ground;
+    bool keepRise; // jumped or riding a rising shape: don't cap our upward speed
 
     void Awake() => rb = GetComponent<Rigidbody2D>();
 
@@ -34,7 +35,10 @@ public class PlayerController : MonoBehaviour
         ground = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
 
         if (kb.spaceKey.wasPressedThisFrame && ground)
+        {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, SurfaceSpeed() + jumpForce);
+            keepRise = true;
+        }
     }
 
     void FixedUpdate()
@@ -42,8 +46,12 @@ public class PlayerController : MonoBehaviour
         // ride a rising surface; when it stops, we keep that speed and fly off (inertia)
         float vy = rb.linearVelocity.y;
         float surface = SurfaceSpeed();
-        if (surface > 0f) vy = Mathf.Max(vy, surface); // only a rising floor pushes; 0 must not stop falling
-        // change this to a force or accel to stop the stutter
+        if (surface > 0f) { vy = Mathf.Max(vy, surface); keepRise = true; } // only a rising floor pushes; 0 must not stop falling
+        else if (vy <= 0f) keepRise = false; // reached the top of the jump/launch, or landed
+
+        // walking up a ramp gives us upward speed; cap it so we don't fly off the top
+        if (ground && !keepRise) vy = Mathf.Min(vy, 0f);
+
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, vy);
     }
 
