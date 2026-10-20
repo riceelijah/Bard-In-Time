@@ -16,6 +16,7 @@ public class PressurePlate : MonoBehaviour
 
     Collider2D plate;
     bool pressed;
+    public bool Pressed => pressed;
     readonly List<Collider2D> hits = new();
 
     void Awake() => plate = GetComponent<Collider2D>();
