@@ -66,8 +66,25 @@ public abstract class EditableShape : MonoBehaviour
     // instant resize with no animation, for freshly spawned shapes
     public virtual void SetSize(Vector3 size) => start = target = transform.localScale = size;
 
-    public virtual void Move(Vector2 delta) => rb.position += delta;
-    public virtual void Rotate(float degrees) => rb.rotation += degrees;
+    // setting rb.position/rotation directly ignores Rigidbody2D constraints, so check them ourselves
+    public virtual void Move(Vector2 delta)
+    {
+        var c = rb.constraints;
+        if ((c & RigidbodyConstraints2D.FreezePositionX) != 0) delta.x = 0f;
+        if ((c & RigidbodyConstraints2D.FreezePositionY) != 0) delta.y = 0f;
+        rb.position += delta;
+    }
+
+    public virtual void Rotate(float degrees)
+    {
+        if ((rb.constraints & RigidbodyConstraints2D.FreezeRotation) != 0) return;
+
+        // spin about the middle of the sprite's square, so a ramp turned 90° flips direction in the same footprint
+        // (the center of mass would drift: a right triangle's centroid sits off toward its corner)
+        Vector2 center = transform.TransformPoint(sr.sprite.bounds.center);
+        rb.position = center + (Vector2)(Quaternion.Euler(0f, 0f, degrees) * (rb.position - center));
+        rb.rotation += degrees;
+    }
 
     public void Levitate(float dy)
     {

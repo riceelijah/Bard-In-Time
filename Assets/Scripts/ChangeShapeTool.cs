@@ -27,6 +27,7 @@ public class ChangeShapeTool : ShapeTool
         var newRb = made.GetComponent<Rigidbody2D>();
         newRb.linearVelocity = oldRb.linearVelocity;
         newRb.angularVelocity = oldRb.angularVelocity;
+        newRb.constraints = oldRb.constraints; // keep a frozen shape frozen
 
         selection.SetSelected(made);
         Destroy(shape.gameObject);
