@@ -16,7 +16,8 @@ public class SelectionManager : MonoBehaviour
     {
         cam = Camera.main;
         tools = GetComponents<ShapeTool>();
-        audioSource = GetComponent<AudioSource>();
+        // most scenes don't have one, so add it rather than null-ref on the first equip
+        if (!TryGetComponent(out audioSource)) audioSource = gameObject.AddComponent<AudioSource>();
         instrumentHolder.InstrumentChanged += OnInstrumentChanged;
     }
 
