@@ -1891,7 +1891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3810274651927384002, guid: d233c9e9ef884383bacb126fbaaccd6f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.073
+      value: -4.28
       objectReference: {fileID: 0}
     - target: {fileID: 3810274651927384002, guid: d233c9e9ef884383bacb126fbaaccd6f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1929,6 +1929,26 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3810274651927384003, guid: d233c9e9ef884383bacb126fbaaccd6f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3810274651927384003, guid: d233c9e9ef884383bacb126fbaaccd6f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -945426676055470849, guid: 4ef2d5769a79d4155abfc6330f882eb0, type: 3}
+    - target: {fileID: 3810274651927384003, guid: d233c9e9ef884383bacb126fbaaccd6f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3810274651927384005, guid: d233c9e9ef884383bacb126fbaaccd6f, type: 3}
+      propertyPath: onSprite
+      value: 
+      objectReference: {fileID: -1707946633184155716, guid: ef650153abdf34bb6b3fe88148be9a4e, type: 3}
+    - target: {fileID: 3810274651927384005, guid: d233c9e9ef884383bacb126fbaaccd6f, type: 3}
+      propertyPath: offSprite
+      value: 
+      objectReference: {fileID: -945426676055470849, guid: 4ef2d5769a79d4155abfc6330f882eb0, type: 3}
     - target: {fileID: 3810274651927384005, guid: d233c9e9ef884383bacb126fbaaccd6f, type: 3}
       propertyPath: ignoredShapes.Array.size
       value: 1

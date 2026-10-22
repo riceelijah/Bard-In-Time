@@ -1341,7 +1341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5291740386618552005, guid: 4187ea6971ab4f17a40dffad406e435d, type: 3}
       propertyPath: plates.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5291740386618552005, guid: 4187ea6971ab4f17a40dffad406e435d, type: 3}
       propertyPath: 'plates.Array.data[0]'
