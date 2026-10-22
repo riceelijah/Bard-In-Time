@@ -6,10 +6,11 @@ public class RotateTool : ShapeTool
 
     public override Abilities Ability => Abilities.Rotate;
 
-    public override void Tick(EditableShape shape)
+    public override bool Tick(EditableShape shape)
     {
         float scroll = Scroll();
-        if (Mathf.Approximately(scroll, 0f)) return;
+        if (Mathf.Approximately(scroll, 0f)) return false;
         shape.Rotate(Mathf.Sign(scroll) * step);
+        return true;
     }
 }

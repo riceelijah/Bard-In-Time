@@ -10,6 +10,7 @@ public class SelectionManager : MonoBehaviour
     EditableShape selected;
     ShapeTool[] tools;
     ShapeTool tool; // the one matching the equipped instrument, or null
+    Instrument instrument;
 
     void Awake()
     {
@@ -24,6 +25,7 @@ public class SelectionManager : MonoBehaviour
     }
 
     void OnInstrumentChanged(Instrument instrument) {
+        this.instrument = instrument;
         tool = System.Array.Find(tools, t => t.Ability == instrument.ability);
     }
 
@@ -39,8 +41,8 @@ public class SelectionManager : MonoBehaviour
             SetSelected(hit ? hit.GetComponentInParent<EditableShape>() : null);
         }
 
-        if (selected != null && tool != null)
-            tool.Tick(selected);
+        if (selected != null && tool != null && tool.Tick(selected))
+            AudioManager.PlaySfx(instrument.useSound);
     }
 
     public event System.Action<EditableShape> SelectionChanged;

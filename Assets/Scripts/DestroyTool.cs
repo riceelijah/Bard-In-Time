@@ -9,10 +9,11 @@ public class DestroyTool : ShapeTool
 
     void Awake() => selection = GetComponent<SelectionManager>();
 
-    public override void Tick(EditableShape shape)
+    public override bool Tick(EditableShape shape)
     {
-        if (!Mouse.current.rightButton.wasPressedThisFrame) return;
+        if (!Mouse.current.rightButton.wasPressedThisFrame) return false;
         selection.SetSelected(null); // fires SelectionChanged so the instrument sprite hides
         Destroy(shape.gameObject);
+        return true;
     }
 }

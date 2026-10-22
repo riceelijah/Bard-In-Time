@@ -11,4 +11,6 @@ public class Instrument : ScriptableObject
     public Vector3 offset;
     public Vector3 scale = Vector3.one;
     public float rotation;
+    public AudioClip useSound; // plays each time the instrument acts on a shape
+    public AudioClip equipSound; // plays when switching to it with the number keys
 }

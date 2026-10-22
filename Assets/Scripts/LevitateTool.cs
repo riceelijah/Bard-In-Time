@@ -7,12 +7,13 @@ public class LevitateTool : ShapeTool
 
     public override Abilities Ability => Abilities.Levitate;
 
-    public override void Tick(EditableShape shape)
+    public override bool Tick(EditableShape shape)
     {
-        if (Mouse.current.rightButton.wasPressedThisFrame) { shape.Drop(); return; }
+        if (Mouse.current.rightButton.wasPressedThisFrame) { shape.Drop(); return true; }
 
         float scroll = Scroll();
-        if (Mathf.Approximately(scroll, 0f)) return;
+        if (Mathf.Approximately(scroll, 0f)) return false;
         shape.Levitate(Mathf.Sign(scroll) * step);
+        return true;
     }
 }
