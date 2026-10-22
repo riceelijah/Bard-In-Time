@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public abstract class ShapeTool : MonoBehaviour
 {
     public abstract Abilities Ability { get; }
+    // returns true on frames the tool actually changed the shape, so the instrument's sound can play
     public abstract bool Tick(EditableShape shape);
 
     [SerializeField] float scrollCooldown = 0.05f; // min seconds between steps; trackpads send scroll every frame

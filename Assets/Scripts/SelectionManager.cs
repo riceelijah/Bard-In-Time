@@ -10,7 +10,7 @@ public class SelectionManager : MonoBehaviour
     EditableShape selected;
     ShapeTool[] tools;
     ShapeTool tool; // the one matching the equipped instrument, or null
-    AudioSource audioSource; // its clip is the equipped instrument's sound
+    AudioSource audioSource; // its clip is the equipped instrument's use sound
 
     void Awake()
     {
@@ -28,7 +28,7 @@ public class SelectionManager : MonoBehaviour
     void OnInstrumentChanged(Instrument instrument) {
         tool = System.Array.Find(tools, t => t.Ability == instrument.ability);
         audioSource.Stop();
-        audioSource.clip = instrument.instrumentSound;
+        audioSource.clip = instrument.useSound;
     }
 
     void Update()
