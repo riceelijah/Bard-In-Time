@@ -11,9 +11,9 @@ public class ChangeShapeTool : ShapeTool
 
     void Awake() => selection = GetComponent<SelectionManager>();
 
-    public override void Tick(EditableShape shape)
+    public override bool Tick(EditableShape shape)
     {
-        if (!Mouse.current.rightButton.wasPressedThisFrame || shapePrefabs.Length == 0) return;
+        if (!Mouse.current.rightButton.wasPressedThisFrame || shapePrefabs.Length == 0) return false;
 
         // -1 (unknown type) wraps to the first prefab
         int i = System.Array.FindIndex(shapePrefabs, p => p.GetType() == shape.GetType());
@@ -31,5 +31,6 @@ public class ChangeShapeTool : ShapeTool
 
         selection.SetSelected(made);
         Destroy(shape.gameObject);
+        return true;
     }
 }

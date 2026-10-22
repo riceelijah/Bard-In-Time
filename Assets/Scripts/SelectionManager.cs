@@ -10,11 +10,13 @@ public class SelectionManager : MonoBehaviour
     EditableShape selected;
     ShapeTool[] tools;
     ShapeTool tool; // the one matching the equipped instrument, or null
+    AudioSource audioSource; // its clip is the equipped instrument's sound
 
     void Awake()
     {
         cam = Camera.main;
         tools = GetComponents<ShapeTool>();
+        audioSource = GetComponent<AudioSource>();
         instrumentHolder.InstrumentChanged += OnInstrumentChanged;
     }
 
@@ -25,6 +27,8 @@ public class SelectionManager : MonoBehaviour
 
     void OnInstrumentChanged(Instrument instrument) {
         tool = System.Array.Find(tools, t => t.Ability == instrument.ability);
+        audioSource.Stop();
+        audioSource.clip = instrument.instrumentSound;
     }
 
     void Update()
@@ -39,8 +43,10 @@ public class SelectionManager : MonoBehaviour
             SetSelected(hit ? hit.GetComponentInParent<EditableShape>() : null);
         }
 
-        if (selected != null && tool != null)
-            tool.Tick(selected);
+        // only one sound at a time, so fast scrolling doesn't stack copies
+        if (selected != null && tool != null && tool.Tick(selected)
+            && audioSource.clip != null && !audioSource.isPlaying)
+            audioSource.Play();
     }
 
     public event System.Action<EditableShape> SelectionChanged;

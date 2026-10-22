@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public abstract class ShapeTool : MonoBehaviour
 {
     public abstract Abilities Ability { get; }
-    public abstract void Tick(EditableShape shape);
+    public abstract bool Tick(EditableShape shape);
 
     [SerializeField] float scrollCooldown = 0.05f; // min seconds between steps; trackpads send scroll every frame
 

@@ -11,4 +11,5 @@ public class Instrument : ScriptableObject
     public Vector3 offset;
     public Vector3 scale = Vector3.one;
     public float rotation;
+    public AudioClip instrumentSound;
 }
