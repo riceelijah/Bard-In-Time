@@ -15,8 +15,8 @@ MonoBehaviour:
   instrumentName: Flute
   instrumentSprite: {fileID: 681733408412487765, guid: 23053b1cc5a1f44698665e8f814d40e9, type: 3}
   ability: 2
-  offset: {x: 0, y: 0, z: 0}
-  scale: {x: 1, y: 1, z: 1}
+  offset: {x: 0.22, y: 0.16, z: 0}
+  scale: {x: 0.66, y: 1, z: 1}
   rotation: 0
   useSound: {fileID: 8300000, guid: 8f9a78ec57d534f2c968d2742992e543, type: 3}
   equipSound: {fileID: 8300000, guid: 8f9a78ec57d534f2c968d2742992e543, type: 3}

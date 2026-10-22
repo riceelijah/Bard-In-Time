@@ -932,6 +932,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4848329244456854130, guid: 3ce60267d693f46c1a7829929eb3f4e7, type: 3}
+    - target: {fileID: 4423289960454326091, guid: 39aa790fbc23841e885187721b9396f2, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 6282922532349553687, guid: 39aa790fbc23841e885187721b9396f2, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.1629
@@ -1079,6 +1083,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4848329244456854130, guid: 3ce60267d693f46c1a7829929eb3f4e7, type: 3}
+    - target: {fileID: 4423289960454326091, guid: 39aa790fbc23841e885187721b9396f2, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 6282922532349553687, guid: 39aa790fbc23841e885187721b9396f2, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.1629
@@ -1534,6 +1542,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4848329244456854130, guid: 3ce60267d693f46c1a7829929eb3f4e7, type: 3}
+    - target: {fileID: 4423289960454326091, guid: 39aa790fbc23841e885187721b9396f2, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 6282922532349553687, guid: 39aa790fbc23841e885187721b9396f2, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
@@ -1815,6 +1827,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4848329244456854130, guid: 3ce60267d693f46c1a7829929eb3f4e7, type: 3}
+    - target: {fileID: 4423289960454326091, guid: 39aa790fbc23841e885187721b9396f2, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 6282922532349553687, guid: 39aa790fbc23841e885187721b9396f2, type: 3}
       propertyPath: m_LocalScale.x
       value: 10

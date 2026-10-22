@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TriangleTutorial.unity
-    guid: a71452606e2814bfe8335cefcc2c8146
+    path: Assets/Scenes/SqTutorial.unity
+    guid: 5e5936cd3e6c347bbba5abc93ca13b91
   - enabled: 1
     path: Assets/Scenes/CircleTutorial.unity
     guid: d626ba8012d2b477d9a8d661161d767c
+  - enabled: 1
+    path: Assets/Scenes/TriangleTutorial.unity
+    guid: a71452606e2814bfe8335cefcc2c8146
   - enabled: 1
     path: Assets/Scenes/RotationTutorial.unity
     guid: 448b52b46dc6248ca84c3e2625a29a40

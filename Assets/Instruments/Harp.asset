@@ -15,7 +15,7 @@ MonoBehaviour:
   instrumentName: Harp
   instrumentSprite: {fileID: 1362569201708729456, guid: f44fb63e79aa442998f6d04fe2284b7c, type: 3}
   ability: 1
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0.1, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   rotation: 0
   useSound: {fileID: 8300000, guid: bb82d0b2925b947199feb3b6e099da85, type: 3}

@@ -15,8 +15,8 @@ MonoBehaviour:
   instrumentName: Lute
   instrumentSprite: {fileID: 965208712665914285, guid: be1980814402d4ff58565c3329e71331, type: 3}
   ability: 4
-  offset: {x: 0, y: 0, z: 0}
-  scale: {x: 1, y: 1, z: 1}
+  offset: {x: 0.1, y: 0, z: 0}
+  scale: {x: 1.2, y: 1.2, z: 1}
   rotation: 0
   useSound: {fileID: 8300000, guid: 244ea8d8380e0403fb28cca0d698f7f8, type: 3}
   equipSound: {fileID: 8300000, guid: 244ea8d8380e0403fb28cca0d698f7f8, type: 3}
