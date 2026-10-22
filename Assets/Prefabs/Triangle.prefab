@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriangleShape
   selectedTint: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  minSize: {x: 0.5, y: 0.5}
-  maxSize: {x: 10, y: 10}
+  minSize: {x: 1.5, y: 1.5}
+  maxSize: {x: 25, y: 25}
   growDuration: 0.15
   levitateStiffness: 8
 --- !u!95 &8737041350926607340

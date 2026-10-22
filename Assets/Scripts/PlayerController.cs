@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class PlayerController : MonoBehaviour
     {
         var kb = Keyboard.current;
         if (kb == null) return;
+
+        if (kb.rKey.wasPressedThisFrame) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         moveInput = 0f;
         if (kb.aKey.isPressed || kb.leftArrowKey.isPressed) moveInput -= 1f;

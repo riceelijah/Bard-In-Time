@@ -45,6 +45,16 @@ public class InstrumentHolder : MonoBehaviour
         }
     }
 
+    // ponytail: IMGUI label, swap for a Canvas + TMP text when the HUD needs styling
+    [SerializeField] int labelFontSize = 48;
+    GUIStyle labelStyle; // built in OnGUI since GUI.skin is only valid there
+
+    void OnGUI() {
+        if (equippedIndex >= instruments.Length || instruments[equippedIndex] == null) return;
+        labelStyle ??= new GUIStyle(GUI.skin.label) { fontSize = labelFontSize };
+        GUI.Label(new Rect(10, 10, 1200, 120), "" + instruments[equippedIndex].ability, labelStyle);
+    }
+
     void Update() {
         var kb = Keyboard.current;
         if (kb == null) return;
