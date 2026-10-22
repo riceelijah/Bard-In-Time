@@ -42,7 +42,10 @@ public class SelectionManager : MonoBehaviour
         }
 
         if (selected != null && tool != null && tool.Tick(selected))
-            AudioManager.PlaySfx(instrument.useSound);
+        {
+            if (instrument.sustain) AudioManager.Sustain(instrument.useSound);
+            else AudioManager.PlaySfx(instrument.useSound);
+        }
     }
 
     public event System.Action<EditableShape> SelectionChanged;
