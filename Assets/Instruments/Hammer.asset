@@ -18,3 +18,6 @@ MonoBehaviour:
   offset: {x: 0.25, y: 0.2, z: 0}
   scale: {x: 1, y: 1, z: 1}
   rotation: -5
+  useSound: {fileID: 8300000, guid: 766bc656f51fb4128833de4b8915ee71, type: 3}
+  equipSound: {fileID: 8300000, guid: 766bc656f51fb4128833de4b8915ee71, type: 3}
+  sustain: 1
