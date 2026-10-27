@@ -20,4 +20,4 @@ MonoBehaviour:
   rotation: 0
   useSound: {fileID: 8300000, guid: 8f9a78ec57d534f2c968d2742992e543, type: 3}
   equipSound: {fileID: 8300000, guid: 8f9a78ec57d534f2c968d2742992e543, type: 3}
-  sustain: 0
+  sustain: 1

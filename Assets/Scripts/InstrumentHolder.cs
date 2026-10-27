@@ -63,8 +63,9 @@ public class InstrumentHolder : MonoBehaviour
             Key currentKeyCheck = GameSettings.KeyFor(Bind.Instrument1 + i);
             if (kb[currentKeyCheck].wasPressedThisFrame) {
                 Equip(i);
-                // here rather than in Equip, so the scene's starting instrument doesn't play on load
-                if (i < instruments.Length && instruments[i] != null) AudioManager.PlaySfx(instruments[i].equipSound);
+                // here rather than in Equip, so the scene's starting instrument doesn't play on load.
+                // Sustain plays a short preview that fades, so long clips don't run on or stack when switching
+                if (i < instruments.Length && instruments[i] != null) AudioManager.Sustain(instruments[i].equipSound);
                 break;
             }
         }

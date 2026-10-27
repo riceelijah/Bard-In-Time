@@ -43,7 +43,7 @@ public class AudioManager : MonoBehaviour
     {
         if (!instrumentSource.isPlaying) return;
 
-        float quiet = Time.time - lastSustain - sustainHold; // seconds into the fade-out
+        float quiet = Time.unscaledTime - lastSustain - sustainHold; // seconds into the fade-out
         if (quiet <= 0f) return;
         instrumentSource.volume = sfxVolume * (1f - quiet / sustainFade);
         if (quiet >= sustainFade) instrumentSource.Stop();
@@ -69,6 +69,6 @@ public class AudioManager : MonoBehaviour
             s.Play();
         }
         s.volume = instance.sfxVolume; // undo any fade already in progress
-        instance.lastSustain = Time.time;
+        instance.lastSustain = Time.unscaledTime;
     }
 }
