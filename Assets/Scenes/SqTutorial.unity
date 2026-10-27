@@ -215,8 +215,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1514895664}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &236282116
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +359,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d233c9e9ef884383bacb126fbaaccd6f, type: 3}
->>>>>>> Stashed changes
 --- !u!1001 &399036131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1722,8 +1719,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1001 &1818532713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1820,7 +1815,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7461208472d04738b2dc29648cbc1797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
->>>>>>> Stashed changes
 --- !u!1001 &2051998206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1892,11 +1886,7 @@ PrefabInstance:
     - target: {fileID: 5291740386618552005, guid: 4187ea6971ab4f17a40dffad406e435d, type: 3}
       propertyPath: 'plates.Array.data[0]'
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 0}
-=======
       objectReference: {fileID: 1969939427}
->>>>>>> Stashed changes
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1976,14 +1966,12 @@ SceneRoots:
   - {fileID: 1690012816}
   - {fileID: 826072507}
   - {fileID: 1700397548}
+  - {fileID: 1818532713}
   - {fileID: 2051998206}
   - {fileID: 399036131}
   - {fileID: 590808923}
   - {fileID: 812232108}
   - {fileID: 1647743895}
-<<<<<<< Updated upstream
-=======
   - {fileID: 313589527}
   - {fileID: 1356371064}
   - {fileID: 236282119}
->>>>>>> Stashed changes
