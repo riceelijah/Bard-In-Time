@@ -32,7 +32,7 @@ public class SelectionManager : MonoBehaviour
     void Update()
     {
         var mouse = Mouse.current;
-        if (mouse == null) return;
+        if (mouse == null || GameSettings.Paused) return;
 
         if (mouse.leftButton.wasPressedThisFrame)
         {

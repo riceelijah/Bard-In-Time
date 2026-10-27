@@ -12,7 +12,7 @@ public class ScaleTool : ShapeTool
         float scroll = Scroll();
         if (Mathf.Approximately(scroll, 0f)) return false;
 
-        float f = 1f + Mathf.Sign(scroll) * step;
+        float f = 1f + scroll * step;
         var kb = Keyboard.current;
         bool scaleX = !kb.ctrlKey.isPressed;
         bool scaleY = !kb.shiftKey.isPressed;

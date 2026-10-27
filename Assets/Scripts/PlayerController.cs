@@ -21,13 +21,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         var kb = Keyboard.current;
-        if (kb == null) return;
+        if (kb == null || GameSettings.Paused) return;
 
-        if (kb.zKey.wasPressedThisFrame) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (kb[GameSettings.KeyFor(Bind.Restart)].wasPressedThisFrame) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         moveInput = 0f;
-        if (kb.aKey.isPressed || kb.leftArrowKey.isPressed) moveInput -= 1f;
-        if (kb.dKey.isPressed || kb.rightArrowKey.isPressed) moveInput += 1f;
+        if (kb[GameSettings.KeyFor(Bind.Left)].isPressed || kb.leftArrowKey.isPressed) moveInput -= 1f;
+        if (kb[GameSettings.KeyFor(Bind.Right)].isPressed || kb.rightArrowKey.isPressed) moveInput += 1f;
 
         if (moveInput != 0f) {
             Vector3 s = transform.localScale;
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
         ground = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
 
-        if (kb.spaceKey.wasPressedThisFrame && ground)
+        if (kb[GameSettings.KeyFor(Bind.Jump)].wasPressedThisFrame && ground)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, SurfaceSpeed() + jumpForce);
             keepRise = true;

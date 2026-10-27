@@ -8,7 +8,6 @@ public class InstrumentHolder : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] SelectionManager selectionManager;
     [SerializeField] int equippedIndex = 0;
-    static readonly Key[] instrumentKeybinds = {Key.Digit1, Key.Digit2, Key.Digit3, Key.Digit4, Key.Digit5};
 
     void Start()
     {   
@@ -57,11 +56,11 @@ public class InstrumentHolder : MonoBehaviour
 
     void Update() {
         var kb = Keyboard.current;
-        if (kb == null) return;
+        if (kb == null || GameSettings.Paused) return;
 
-        for (int i = 0; i < instrumentKeybinds.Length; i++)
+        for (int i = 0; i < 5; i++) // Bind.Instrument1..Instrument5
         {
-            Key currentKeyCheck = instrumentKeybinds[i];
+            Key currentKeyCheck = GameSettings.KeyFor(Bind.Instrument1 + i);
             if (kb[currentKeyCheck].wasPressedThisFrame) {
                 Equip(i);
                 // here rather than in Equip, so the scene's starting instrument doesn't play on load

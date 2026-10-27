@@ -10,7 +10,7 @@ public class RotateTool : ShapeTool
     {
         float scroll = Scroll();
         if (Mathf.Approximately(scroll, 0f)) return false;
-        shape.Rotate(Mathf.Sign(scroll) * step);
+        shape.Rotate(scroll * step);
         return true;
     }
 }

@@ -14,7 +14,7 @@ public class LevitateTool : ShapeTool
         float scroll = Scroll();
         if (Mathf.Approximately(scroll, 0f)) { return false; }
         if (scroll < 0f) { return false; }
-        shape.Levitate(Mathf.Sign(scroll) * step);
+        shape.Levitate(scroll * step);
         return true;
     }
 }

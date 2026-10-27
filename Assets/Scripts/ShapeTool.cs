@@ -11,7 +11,8 @@ public abstract class ShapeTool : MonoBehaviour
 
     float nextScroll;
 
-    // dominant scroll axis, so horizontal trackpad swipes count too; 0 while cooling down
+    // dominant scroll axis, so horizontal trackpad swipes count too; 0 while cooling down.
+    // Returns ±ScrollSensitivity, so tools multiply it by their step.
     protected float Scroll()
     {
         Vector2 s = Mouse.current.scroll.ReadValue();
@@ -19,6 +20,6 @@ public abstract class ShapeTool : MonoBehaviour
         if (v == 0f || Time.time < nextScroll) return 0f;
 
         nextScroll = Time.time + scrollCooldown;
-        return v;
+        return Mathf.Sign(v) * GameSettings.ScrollSensitivity;
     }
 }
